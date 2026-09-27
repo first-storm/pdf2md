@@ -10,7 +10,7 @@ readme = "README.md"
 authors = [{name = "Your Name"}]
 license = {text = "MIT"}
 dependencies = [
-    "mistralai",
+    "mistralai>=1.0",
     "tqdm",
 ]
 

@@ -1,12 +1,14 @@
-from mistralai import Mistral
+try:  # mistralai v1.x
+    from mistralai import Mistral, DocumentURLChunk
+except ImportError:  # mistralai v2.x moved SDK under mistralai.client
+    from mistralai.client.sdk import Mistral
+    from mistralai.client.models import DocumentURLChunk
 from pathlib import Path
 import os
 import base64
 import sys
 import urllib.parse
 import argparse
-from mistralai import DocumentURLChunk
-from mistralai.models import OCRResponse
 from tqdm import tqdm
 import time
 from typing import Optional, Set, Callable
